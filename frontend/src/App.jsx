@@ -1,10 +1,18 @@
 import { useState } from 'react'
-import Navbar from "./components/Navbar";
+import Navbarr from "./components/home/Navbarr";
+import Hero from "./components/home/Hero";
+import About from "./components/home/About";
+import Features from "./components/home/Features";
+import Footer from "./components/home/Footer";
 
 function App() {
    return(
     <div className="font-sans">
-     <Navbar/>
+     <Navbarr/>
+     <Hero/>
+     <About/>
+     <Features/>
+     <Footer/>
     </div>
    )
 }

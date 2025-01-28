@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Navbar = () => {
+const Navbarr = () => {
   return (
     <nav className="bg-white shadow-lg">
     <div className="container mx-auto flex justify-between items-center py-4 px-6">
@@ -19,4 +19,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbarr
