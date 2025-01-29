@@ -3,6 +3,9 @@ import Navbarr from "./components/home/Navbarr";
 import Home from "./components/home/Home"
 import Signup from './components/Login-Signup/Signup';
 import SignUpMentor from './components/Login-Signup/SignupMentor';
+import Login from './components/Login-Signup/Login';
+import LoginMentor from './components/Login-Signup/LoginMentor';
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,6 +17,8 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/signup" element={<SignUpMentor />} />
         <Route path="/signupmentee" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/loginmentor" element={<LoginMentor />} />
         <Route path="/research-post" element={<h1 className="text-center mt-10 text-3xl">Research Post Page</h1>} />
         <Route path="/explore" element={<h1 className="text-center mt-10 text-3xl">Explore Page</h1>} />
         <Route path="/profile" element={<h1 className="text-center mt-10 text-3xl">User Profile Page</h1>} />

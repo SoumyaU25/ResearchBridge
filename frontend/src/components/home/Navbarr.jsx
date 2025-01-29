@@ -35,11 +35,20 @@ const Navbarr = () => {
         </ul>
 
         {/* Register Button */}
-        <Link to="/signup">
-          <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-            login now
+        <div>
+        <Link to="/login">
+          <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mr-5">
+            login as mentee
           </button>
         </Link>
+        <Link to="/loginmentor">
+          <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+            login as mentor
+          </button>
+        </Link>
+
+        </div>
+        
       </div>
     </nav>
   );

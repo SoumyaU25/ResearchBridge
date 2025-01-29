@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState }  from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const SignUp = () => {
+    const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mt-10 mb-10">
@@ -36,10 +38,17 @@ const SignUp = () => {
           <div className="mb-4 relative">
             <label className="block text-gray-700">Password</label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="Enter your password"
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
             />
+            <button
+                          type="button"
+                          className="absolute top-10 right-4 text-gray-600"
+                          onClick={() => setShowPassword(!showPassword)}
+                        >
+                          {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
           </div>
 
           {/* Role */}
@@ -76,10 +85,17 @@ const SignUp = () => {
           <div className="mb-4 relative">
             <label className="block text-gray-700">Confirm Password</label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="Enter your password again"
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
             />
+            <button
+                          type="button"
+                          className="absolute top-10 right-4 text-gray-600"
+                          onClick={() => setShowPassword(!showPassword)}
+                        >
+                          {showPassword ? <FaEyeSlash /> : <FaEye />}
+                        </button>
           </div>
 
           {/* Remember Me & Forgot Password */}
