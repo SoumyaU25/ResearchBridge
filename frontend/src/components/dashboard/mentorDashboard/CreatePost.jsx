@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa";
 import { FaRegCalendarAlt } from "react-icons/fa";
 import { AiOutlineCalendar } from "react-icons/ai";
@@ -11,15 +12,17 @@ const CreatePost = () => {
     <div className="flex h-screen bg-[#F9F5FF]">
       {/* Sidebar */}
       <aside className="w-1/5 bg-white p-6 shadow-md">
-        <h2 className="text-2xl font-bold text-green-600">Research Bridge</h2>
+      <Link to="/"><h2 className="text-2xl font-bold text-green-700">Research Bridge</h2></Link>
         <nav className="mt-8">
           <ul className="space-y-4">
             <li className="flex items-center space-x-2 text-gray-600 font-medium">
               <span>📄</span> <span>Profile</span>
             </li>
+            <Link to='/all-post'>
             <li className="flex items-center space-x-2 bg-gray-200 p-2 rounded-lg text-green-600 font-semibold">
-              <span>📝</span> <span>Posts</span>
+            <span>📝</span> <span>Posts</span>
             </li>
+            </Link>
             <li className="flex items-center space-x-2 text-gray-600 font-medium">
               <span>📩</span> <span>Applications</span>
             </li>

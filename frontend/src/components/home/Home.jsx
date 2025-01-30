@@ -23,24 +23,24 @@ const Home = () => {
       <div className="text-center md:text-left md:w-1/2 space-y-6">
 
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
-           Welcome to <span className="text-green-500">ResearchBridge</span>
+           Welcome to <span className="text-green-600">ResearchBridge</span>
          </h1>
          <p className="text-lg text-gray-600 mb-6">
-          Where Ideas Meet <span className="text-green-500">Opportunities</span>
+          Where Ideas Meet <span className="text-green-600">Opportunities</span>
          </p>
          <Link to="/login">
-         <button className="bg-green-500 text-white px-3 py-3 rounded hover:bg-green-600">
+         <button className="bg-green-700 text-white px-3 py-3 rounded hover:bg-green-800">
            Get Started
          </button>
          </Link>
       </div>
 
       {/* Right Side: Image */}
-      <div className="mt-8 md:mt-0 md:w-1/2 flex justify-center">
+      <div className="mt-8 md:mt-0 md:w-1/2 flex justify-end">
         <img
           src="\src\assets\heroimg.png"
           alt="Hero"
-          className="rounded-lg shadow-lg"
+          className="rounded-lg shadow-lg w-full md:w-auto max-w-md"
         />
       </div>
     </div>
