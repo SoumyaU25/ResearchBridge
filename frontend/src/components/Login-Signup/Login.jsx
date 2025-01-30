@@ -55,7 +55,7 @@ const Login = () => {
           </div>
 
           {/* Login Button */}
-          <button className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+          <button className="w-full bg-green-700 text-white py-2 rounded-lg hover:bg-green-800 transition duration-300">
             Login
           </button>
 
