@@ -10,7 +10,7 @@ const Navbarr = () => {
   const location = useLocation(); // Get the current route
 
   // Hide navbar for specific routes
-  const hideNavbarRoutes = ["/all-post", "/create-post"];
+  const hideNavbarRoutes = ["/all-post", "/create-post", "/profile", "/mentor-appl"];
   if (hideNavbarRoutes.includes(location.pathname)) {
     return null; // Do not render navbar
   }
