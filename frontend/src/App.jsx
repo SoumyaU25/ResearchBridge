@@ -6,7 +6,7 @@ import SignUpMentor from './components/Login-Signup/SignupMentor';
 import Login from './components/Login-Signup/Login';
 import LoginMentor from './components/Login-Signup/LoginMentor';
 import CreatePost from './components/dashboard/mentorDashboard/CreatePost';
-import AllPost from './components/dashboard/mentorDashboard/AllPost;'
+import AllPost from './components/dashboard/mentorDashboard/AllPost';
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
