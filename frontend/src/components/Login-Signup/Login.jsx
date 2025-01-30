@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -9,12 +9,12 @@ const Login = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-semibold text-center text-gray-800 mb-2">
-          Welcome Mentee !
+          Welcome!
         </h2>
         <h3 className="text-xl font-bold text-center text-gray-800 mb-6">
           Log In
         </h3>
-        
+
         <form>
           {/* Email */}
           <div className="mb-4">
@@ -61,13 +61,16 @@ const Login = () => {
 
           {/* Register Link */}
           <p className="text-center text-gray-600 mt-4">
-            Don't have an Account?{" "}
-            
+            <div>Don't have an Account? </div>
+            <div>
+              <Link to="/signup" className="text-blue-500 hover:underline">
+                Register as Mentor
+              </Link>
+            </div>
+
             <Link to="/signupmentee" className="text-blue-500 hover:underline">
               Register as Mentee
             </Link>
-            
-            
           </p>
         </form>
       </div>

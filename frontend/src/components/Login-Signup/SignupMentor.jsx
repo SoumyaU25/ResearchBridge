@@ -1,8 +1,9 @@
-import React, {useState} from "react";
+import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SignUpMentor = () => {
-    const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -13,7 +14,7 @@ const SignUpMentor = () => {
         <h3 className="text-lg font-medium text-center text-gray-600 mb-6">
           Sign Up As Mentor
         </h3>
-        
+
         <form>
           {/* Username */}
           <div className="mb-4">
@@ -44,12 +45,12 @@ const SignUpMentor = () => {
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
             />
             <button
-                          type="button"
-                          className="absolute top-10 right-4 text-gray-600"
-                          onClick={() => setShowPassword(!showPassword)}
-                        >
-                          {showPassword ? <FaEyeSlash /> : <FaEye />}
-                        </button>
+              type="button"
+              className="absolute top-10 right-4 text-gray-600"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
           </div>
 
           {/* Role */}
@@ -91,12 +92,12 @@ const SignUpMentor = () => {
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
             />
             <button
-                          type="button"
-                          className="absolute top-10 right-4 text-gray-600"
-                          onClick={() => setShowPassword(!showPassword)}
-                        >
-                          {showPassword ? <FaEyeSlash /> : <FaEye />}
-                        </button>
+              type="button"
+              className="absolute top-10 right-4 text-gray-600"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
           </div>
 
           {/* Remember Me & Forgot Password */}
@@ -118,9 +119,9 @@ const SignUpMentor = () => {
           {/* Login Link */}
           <p className="text-center text-gray-600 mt-4">
             Already have an account?{" "}
-            <a href="/loginmentor" className="text-blue-500 hover:underline">
+            <Link to="/login" className="text-blue-500 hover:underline">
               Login
-            </a>
+            </Link>
           </p>
         </form>
       </div>

@@ -28,15 +28,9 @@ const Home = () => {
          <p className="text-lg text-gray-600 mb-6">
           Where Ideas Meet <span className="text-green-500">Opportunities</span>
          </p>
-         <Link to="/signup">
+         <Link to="/login">
          <button className="bg-green-500 text-white px-3 py-3 rounded hover:bg-green-600">
-           Signup as Mentor
-         </button>
-         </Link>
-
-         <Link to="/signupmentee">
-         <button className="bg-green-500 text-white px-3 py-3 rounded hover:bg-green-600 ml-3">
-           Signup as Mentee
+           Get Started
          </button>
          </Link>
       </div>

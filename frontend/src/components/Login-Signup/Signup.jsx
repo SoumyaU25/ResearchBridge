@@ -1,8 +1,9 @@
-import React, { useState }  from "react";
+import  { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
-    const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mt-10 mb-10">
@@ -12,7 +13,7 @@ const SignUp = () => {
         <h3 className="text-lg font-medium text-center text-gray-600 mb-6">
           Sign Up As Mentee
         </h3>
-        
+
         <form>
           {/* Username */}
           <div className="mb-4">
@@ -43,11 +44,11 @@ const SignUp = () => {
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
             />
             <button
-                          type="button"
-                          className="absolute top-10 right-4 text-gray-600"
-                          onClick={() => setShowPassword(!showPassword)}
-                        >
-                          {showPassword ? <FaEyeSlash /> : <FaEye />}
+              type="button"
+              className="absolute top-10 right-4 text-gray-600"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
             </button>
           </div>
 
@@ -90,12 +91,12 @@ const SignUp = () => {
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
             />
             <button
-                          type="button"
-                          className="absolute top-10 right-4 text-gray-600"
-                          onClick={() => setShowPassword(!showPassword)}
-                        >
-                          {showPassword ? <FaEyeSlash /> : <FaEye />}
-                        </button>
+              type="button"
+              className="absolute top-10 right-4 text-gray-600"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
           </div>
 
           {/* Remember Me & Forgot Password */}
@@ -117,9 +118,9 @@ const SignUp = () => {
           {/* Login Link */}
           <p className="text-center text-gray-600 mt-4">
             Already have an account?{" "}
-            <a href="/login" className="text-blue-500 hover:underline">
+            <Link to="/login" className="text-blue-500 hover:underline">
               Login
-            </a>
+            </Link>
           </p>
         </form>
       </div>
