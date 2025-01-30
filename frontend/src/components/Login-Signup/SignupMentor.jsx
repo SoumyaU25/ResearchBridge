@@ -63,14 +63,14 @@ const SignUpMentor = () => {
           </div> */}
 
           {/* Education */}
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label className="block text-gray-700">Education</label>
             <input
               type="text"
               placeholder="Enter your highest education"
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
             />
-          </div>
+          </div> */}
 
           {/* University */}
           <div className="mb-4">
