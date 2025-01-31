@@ -2,8 +2,23 @@ import  { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+import { useFirebase } from "../../context/Firebase";
+
 const SignUp = () => {
+  const firebase = useFirebase();
+
   const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log('signing up a user....');
+    const result = await firebase.signupUserWithEmailAndPassword(email, password, 'mentee');
+    console.log('successful....', result);
+  };
+
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mt-10 mb-10">
@@ -14,7 +29,7 @@ const SignUp = () => {
           Sign Up As Mentee
         </h3>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           {/* Username */}
           <div className="mb-4">
             <label className="block text-gray-700">User name</label>
@@ -28,7 +43,7 @@ const SignUp = () => {
           {/* Email */}
           <div className="mb-4">
             <label className="block text-gray-700">Email</label>
-            <input
+            <input onChange={e => setEmail(e.target.value)} value={email} 
               type="email"
               placeholder="Enter your email id"
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -38,7 +53,7 @@ const SignUp = () => {
           {/* Password */}
           <div className="mb-4 relative">
             <label className="block text-gray-700">Password</label>
-            <input
+            <input onChange={e => setPassword(e.target.value)} value={password} 
               type={showPassword ? "text" : "password"}
               placeholder="Enter your password"
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
