@@ -23,7 +23,7 @@ const Sidebar = ({ role }) => {
 
   return (
     <div className="w-64 h-screen bg-white shadow-md p-4">
-      <h1 className="text-green-600 text-2xl font-bold mb-6">Research Bridge</h1>
+      <Link to="/"><h1 className="text-green-600 text-2xl font-bold mb-6">Research Bridge</h1></Link>
 
       <ul>
         {menuItems.map((item) => (

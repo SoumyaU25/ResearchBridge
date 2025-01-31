@@ -20,19 +20,19 @@ const MentorApplications = () => {
         {/* Header */}
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-2xl font-bold text-gray-700 mb-4">Mentor-Name</h1>
+            <h1 className="text-2xl font-bold text-gray-700 mb-4">Anurag Sharma</h1>
             <p className="text-gray-600">Let's finish your task today!</p>
           </div>
           <div className="flex items-center space-x-3">
             <img
-              src="https://randomuser.me/api/portraits/women/44.jpg"
+              src="https://randomuser.me/api/portraits/men/65.jpg"
               alt="User"
               className="w-10 h-10 rounded-full border"
             />
-            <div className="p-3 bg-white shadow-md rounded-lg flex items-center">
+            {/* <div className="p-3 bg-white shadow-md rounded-lg flex items-center">
               <FaRegCalendarAlt className="text-gray-600" />
-              <span className="ml-2 text-gray-700">July 14, 2024</span>
-            </div>
+              
+            </div> */}
           </div>
         </div>
 

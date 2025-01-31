@@ -14,18 +14,18 @@ const CreatePost = () => {
       <main className="flex-1 p-10">
         <div className="flex justify-between items-center">
           <div>
-            <h3 className="text-2xl font-bold text-gray-700 mb-4 ">Mentor-Name</h3>
+            <h3 className="text-2xl font-bold text-gray-700 mb-4 ">Anurag Sharma</h3>
             <p className="text-gray-500">Let's post today!</p>
           </div>
           <div className="flex items-center space-x-3">
             <img
-              src="https://randomuser.me/api/portraits/women/44.jpg"
+              src="https://randomuser.me/api/portraits/men/65.jpg"
               alt="User"
               className="w-10 h-10 rounded-full border"
             />
             <div className="p-3 bg-white shadow-md rounded-lg flex items-center">
               <FaRegCalendarAlt className="text-gray-600" />
-              <span className="ml-2 text-gray-700">July 14, 2024</span>
+              <span className="ml-2 text-gray-700">Jan 31, 2025</span>
             </div>
           </div>
         </div>

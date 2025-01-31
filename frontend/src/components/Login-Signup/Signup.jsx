@@ -27,7 +27,8 @@ const SignUp = () => {
 
     if(username && email && password  && confirmPassword && university && education){
       if(password != confirmPassword){
-        return toast.error("Password dont match");
+        // return toast.error("Password dont match");
+        return;
       }
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -41,13 +42,14 @@ const SignUp = () => {
           role: "mentee", 
           createdAt: new Date(),
         });
-        navigate("../dashboard/menteeDashboard/MenteeProfile");
+        navigate("/mentee-profile");
       } catch (error) {
         console.error("Error signing up:", error.message);
       }
-      console.log('successful....', userCredential);
+      //console.log('successful....', userCredential);
     }else{
-      return toast.error("All fields are mandatory");
+      // return toast.error("All fields are mandatory");
+      return;
     }
     
   };

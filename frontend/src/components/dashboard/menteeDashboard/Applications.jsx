@@ -21,7 +21,7 @@ const Applications = () => {
       <div className="flex-1 p-8">
         {/* Header */}
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-semibold">Mentee-Name</h2>
+          <h2 className="text-2xl font-semibold">Simran Singh</h2>
           <img
             src="https://randomuser.me/api/portraits/women/65.jpg"
             alt="Profile"

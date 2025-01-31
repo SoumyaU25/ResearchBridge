@@ -1,19 +1,55 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { auth } from "../../Firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { setDoc, doc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import { db } from "../../Firebase";
 
 const SignUpMentor = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [university, setUniversity] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [about, setAbout] = useState("");
+  const [myWork, setMyWork] = useState("");
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('signing up a user....');
-    const result = await firebase.signupUserWithEmailAndPassword(email, password, 'mentor');
-    console.log('successful....', result);
+
+    if(username && email && password  && confirmPassword && university){
+      if(password != confirmPassword){
+        return toast.error("Password dont match");
+      }
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+  
+        await setDoc(doc(db, "mentor", user.uid), {
+          username,
+          email,
+          university,
+          role: "mentor", 
+          createdAt: new Date(),
+        });
+        navigate("/mentor-profile");
+      } catch (error) {
+        console.error("Error signing up:", error.message);
+      }
+      console.log('successful....', userCredential);
+    }else{
+      return toast.error("All fields are mandatory");
+    }
+    
   };
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -29,7 +65,7 @@ const SignUpMentor = () => {
           {/* Username */}
           <div className="mb-4">
             <label className="block text-gray-700">User name</label>
-            <input
+            <input onChange={e => setUsername(e.target.value)} value={username}
               type="text"
               placeholder="Enter your user name"
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -86,7 +122,7 @@ const SignUpMentor = () => {
           {/* University */}
           <div className="mb-4">
             <label className="block text-gray-700">University</label>
-            <input
+            <input onChange={e => setUniversity(e.target.value)} value={university}
               type="text"
               placeholder="Enter your university name"
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -96,7 +132,7 @@ const SignUpMentor = () => {
           {/* Confirm Password */}
           <div className="mb-4 relative">
             <label className="block text-gray-700">Confirm Password</label>
-            <input
+            <input onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword}
               type={showPassword ? "text" : "password"}
               placeholder="Enter your password again"
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
