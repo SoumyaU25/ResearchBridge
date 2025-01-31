@@ -4,26 +4,6 @@ const MentorProfile = () => {
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-1/5 bg-white p-6 shadow-md">
-        <h2 className="text-2xl font-bold text-green-600">Research Bridge</h2>
-        <nav className="mt-8">
-          <ul className="space-y-4">
-            <li className="flex items-center space-x-2 bg-gray-200 p-2 rounded-lg text-green-600 font-semibold">
-              <span>📄</span> <span>Profile</span>
-            </li>
-            <li className="flex items-center space-x-2 text-gray-600 font-semibold">
-              <span>📝</span> <span>Posts</span>
-            </li>
-            <li className="flex items-center space-x-2 text-gray-600 font-medium">
-              <span>📩</span> <span>Applications</span>
-            </li>
-            <li className="flex items-center space-x-2 text-gray-600 font-medium">
-              <span>💬</span> <span>Chats</span>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
       {/* Main Content */}
       <main className="flex-1 p-8">
         {/* Profile Header */}
