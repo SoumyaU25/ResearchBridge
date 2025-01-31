@@ -20,7 +20,7 @@ function Layout() {
 
   // Fetch role from localStorage (simulate authentication)
   useEffect(() => {
-     const userRole = "mentee";// localStorage.getItem("userRole"); // "mentor" or "mentee"
+     const userRole = "mentor";// localStorage.getItem("userRole"); // "mentor" or "mentee"
     setRole(userRole);
   }, []);
 
