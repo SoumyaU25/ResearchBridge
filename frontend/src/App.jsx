@@ -6,8 +6,6 @@ import SignUpMentor from './components/Login-Signup/SignupMentor';
 import Login from './components/Login-Signup/Login';
 import CreatePost from './components/dashboard/mentorDashboard/CreatePost';
 import AllPost from './components/dashboard/mentorDashboard/AllPost';
-// import MentorApplications from './components/dashboard/mentorDashboard/MentorApplications';
-// import MentorProfile from './components/dashboard/mentorDashboard/MentorProfile';
 import MentorProfile from './components/dashboard/mentorDashboard/MentorProfile';
 import MentorApplications from './components/dashboard/mentorDashboard/MentorApplications'
 
