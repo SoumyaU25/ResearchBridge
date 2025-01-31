@@ -10,7 +10,7 @@ const Navbarr = () => {
   const location = useLocation(); // Get the current route
 
   // Hide navbar for specific routes
-  const hideNavbarRoutes = ["/all-post", "/create-post", "/profile", "/mentor-appl"];
+  const hideNavbarRoutes = ["/all-post", "/create-post", "/mentor-applications", "/mentor-profile", "/mentee-profile", "/research-post", "/mentee-applications"];
   if (hideNavbarRoutes.includes(location.pathname)) {
     return null; // Do not render navbar
   }
@@ -44,12 +44,12 @@ const Navbarr = () => {
           <div className="hidden md:flex space-x-4">
             <Link to="/signupmentee">
               <button className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800">
-                Signup as Mentee
+                For Mentee
               </button>
             </Link>
             <Link to="/signup">
               <button className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-800">
-                Signup as Mentor
+                For Mentor
               </button>
             </Link>
           </div>
