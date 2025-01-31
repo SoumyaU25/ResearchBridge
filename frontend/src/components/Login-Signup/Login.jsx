@@ -2,10 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-import { useFirebase } from "../../context/Firebase";
+
 
 const Login = () => {
-  const firebase = useFirebase();
 
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');

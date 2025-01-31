@@ -1,23 +1,56 @@
 import  { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
-import { useFirebase } from "../../context/Firebase";
+import { auth } from "../../Firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { setDoc, doc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import { db } from "../../Firebase";
 
 const SignUp = () => {
-  const firebase = useFirebase();
-
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [university, setUniversity] = useState("");
+  const [education, setEducation] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [about, setAbout] = useState("");
+  const [myWork, setMyWork] = useState("");
+
+  const navigate = useNavigate();
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('signing up a user....');
-    const result = await firebase.signupUserWithEmailAndPassword(email, password, 'mentee');
-    console.log('successful....', result);
-  };
 
+    if(username && email && password  && confirmPassword && university && education){
+      if(password != confirmPassword){
+        return toast.error("Password dont match");
+      }
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+  
+        await setDoc(doc(db, "mentees", user.uid), {
+          username,
+          email,
+          university,
+          education,
+          role: "mentee", 
+          createdAt: new Date(),
+        });
+        navigate("../dashboard/menteeDashboard/MenteeProfile");
+      } catch (error) {
+        console.error("Error signing up:", error.message);
+      }
+      console.log('successful....', userCredential);
+    }else{
+      return toast.error("All fields are mandatory");
+    }
+    
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -33,7 +66,7 @@ const SignUp = () => {
           {/* Username */}
           <div className="mb-4">
             <label className="block text-gray-700">User name</label>
-            <input
+            <input onChange={e => setUsername(e.target.value)} value={username}
               type="text"
               placeholder="Enter your user name"
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -80,7 +113,7 @@ const SignUp = () => {
           {/* Education */}
           <div className="mb-4">
             <label className="block text-gray-700">Education</label>
-            <input
+            <input onChange={e => setEducation(e.target.value)} value={education} 
               type="text"
               placeholder="Enter your highest education"
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -90,7 +123,7 @@ const SignUp = () => {
           {/* University */}
           <div className="mb-4">
             <label className="block text-gray-700">University</label>
-            <input
+            <input onChange={e => setUniversity(e.target.value)} value={university} 
               type="text"
               placeholder="Enter your university name"
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -100,7 +133,7 @@ const SignUp = () => {
           {/* Confirm Password */}
           <div className="mb-4 relative">
             <label className="block text-gray-700">Confirm Password</label>
-            <input
+            <input onChange={e => setConfirmPassword(e.target.value)} value={confirmPassword}
               type={showPassword ? "text" : "password"}
               placeholder="Enter your password again"
               className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
